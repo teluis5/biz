@@ -23,31 +23,29 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			.hero-image img {
 				display: block;
 				margin: 0 auto;
-				border-radius: var(--radius-lg);
-				box-shadow: var(--shadow-md);
 				width: 100%;
-				max-height: 450px;
+				max-height: 500px;
 				object-fit: cover;
 			}
 			.prose {
-				color: var(--black);
+				color: var(--text-main);
 				font-size: 1.05rem;
 			}
 			.title {
 				margin-bottom: 2em;
-				text-align: center;
-				line-height: 1;
+				line-height: 1.4;
 			}
 			.title h1 {
 				margin: 0 0 0.5em 0;
+				font-size: 1.8rem;
 			}
 			.date {
-				margin-bottom: 0.5em;
-				color: var(--gray);
-				font-size: 0.95em;
-			}
-			.last-updated-on {
-				font-style: italic;
+				margin-bottom: 1em;
+				color: var(--text-light);
+				font-size: 0.9em;
+				display: flex;
+				gap: 1em;
+				align-items: center;
 			}
 			/* Sidebar Widgets */
 			.widget {
@@ -56,24 +54,23 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			}
 			.widget-title {
 				font-size: 1.1rem;
-				font-weight: bold;
-				color: var(--black);
-				border-bottom: 2px solid var(--accent);
-				padding-bottom: 0.5rem;
-				margin-bottom: 1.2rem;
-				display: inline-block;
+				color: var(--text-main);
+				background-color: #f7f7f7;
+				padding: 0.5rem 1rem;
+				border-left: 4px solid var(--theme-accent);
+				margin: -1.5rem -1.5rem 1.5rem -1.5rem;
 			}
 			.profile-pic {
-				width: 80px;
-				height: 80px;
+				width: 100px;
+				height: 100px;
 				border-radius: 50%;
 				margin: 0 auto 1rem;
-				background-color: var(--gray-light);
+				background-color: var(--border-color);
 				display: block;
 			}
 			.profile-desc {
 				font-size: 0.9rem;
-				color: var(--gray);
+				color: var(--text-main);
 				text-align: center;
 				line-height: 1.6;
 			}
@@ -85,30 +82,28 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		<main>
 			<div class="layout-container">
 				<!-- メインコンテンツ (左カラム) -->
-				<article class="layout-main card" style="padding: 2.5rem 2rem;">
+				<article class="layout-main box" style="padding: 2rem;">
+					<div class="title">
+						<div class="date">
+							<span>📅 <FormattedDate date={pubDate} /></span>
+							{
+								updatedDate && (
+									<span>🔄 <FormattedDate date={updatedDate} /></span>
+								)
+							}
+						</div>
+						<h1>{title}</h1>
+					</div>
+					
 					<div class="hero-image">
 						{heroImage && <Image width={1020} height={510} src={heroImage} alt="" />}
 					</div>
+					
 					<div class="prose">
-						<div class="title">
-							<div class="date">
-								<FormattedDate date={pubDate} />
-								{
-									updatedDate && (
-										<div class="last-updated-on">
-											Last updated on <FormattedDate date={updatedDate} />
-										</div>
-									)
-								}
-							</div>
-							<h1>{title}</h1>
-							<hr />
-						</div>
-						
 						<slot />
 						
 						<!-- 記事下広告 -->
-						<div style="margin-top: 4rem;">
+						<div style="margin-top: 3rem;">
 							<Ad />
 						</div>
 					</div>
@@ -117,17 +112,18 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				<!-- サイドバー (右カラム) -->
 				<aside class="layout-sidebar">
 					<!-- プロフィールウィジェット -->
-					<div class="widget card">
-						<span class="widget-title">Profile</span>
+					<div class="widget box">
+						<div class="widget-title">プロフィール</div>
 						<div class="profile-pic"></div>
 						<p class="profile-desc">
+							<strong>筆者名</strong><br/>
 							IT・ビジネスの最前線で働くプロフェッショナル。<br/>効率化や最新テクノロジーの知見を発信します。
 						</p>
 					</div>
 
 					<!-- サイドバー広告 -->
-					<div class="widget card" style="padding: 1rem; text-align: center;">
-						<span class="widget-title" style="font-size:0.9rem; color:var(--gray-light); border-bottom:none; margin-bottom:0.5rem;">Sponsored</span>
+					<div class="widget box" style="padding: 1rem; text-align: center;">
+						<div style="font-size:0.8rem; color:var(--text-light); margin-bottom:0.5rem;">スポンサーリンク</div>
 						<Ad />
 					</div>
 				</aside>
