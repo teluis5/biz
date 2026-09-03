@@ -17,15 +17,18 @@ body {
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	background-color: var(--bg-main);
+	background-color: var(--bg-content);
 	color: var(--text-main);
 	font-size: 16px;
 	line-height: 1.8;
 }
+* {
+	box-sizing: border-box;
+}
 
 main {
-	width: 1200px;
-	max-width: 100%;
+	width: 100%;
+	max-width: 1200px;
 	margin: 2rem auto;
 	padding: 0 1rem;
 }
@@ -44,6 +47,14 @@ a {
 a:hover {
 	text-decoration: underline;
 	opacity: 0.8;
+}
+
+/* SVG Icon alignment */
+.icon-inline {
+	display: inline-block;
+	vertical-align: text-bottom;
+	width: 1.2em;
+	height: 1.2em;
 }
 
 p { margin-bottom: 1.5em; }
@@ -86,6 +97,65 @@ hr {
 	border: none;
 	border-top: 1px solid var(--border-color);
 	margin: 2rem 0;
+}
+
+/* Tables */
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 2rem 0;
+	font-size: 0.9rem;
+}
+th, td {
+	border: 1px solid var(--border-color);
+	padding: 0.6rem 0.8rem;
+	text-align: left;
+	vertical-align: top;
+}
+th {
+	background-color: var(--bg-main);
+	font-weight: bold;
+	font-size: 0.85rem;
+}
+tbody td:first-child {
+	font-weight: bold;
+	font-size: 0.85rem;
+	background-color: #fafafa;
+}
+thead th {
+	position: sticky;
+	top: 57px; /* サイトのヘッダー高さ(約57px)に合わせる */
+	z-index: 10;
+	/* border-collapse のバグ対策として、擬似的に下線を引く */
+	box-shadow: 0 1px 0 var(--border-color);
+}
+
+/* Wide Table Scroll Wrapper (JS Applied) */
+.table-scroll-wrapper {
+	width: 100%;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	margin: 2rem 0;
+	/* Add subtle shadow on right edge to imply scrollability */
+	box-shadow: inset -5px 0 5px -5px rgba(0,0,0,0.1);
+}
+.table-scroll-wrapper table {
+	margin: 0;
+}
+.table-scroll-hint {
+	text-align: right;
+	font-size: 0.8rem;
+	color: var(--text-light);
+	padding-bottom: 0.5rem;
+	position: sticky;
+	left: 0; /* Keep it visible even when scrolling */
+}
+
+/* Force left column to be narrow and wrap by character */
+.table-fixed-left-col th:first-child,
+.table-fixed-left-col td:first-child {
+	word-break: break-all;
+	line-height: 1.3;
 }
 
 /* Two Column Layout */
