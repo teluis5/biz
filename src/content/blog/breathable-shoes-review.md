@@ -1,8 +1,8 @@
-﻿---
+---
 title: '【通勤革命】靴底に穴？通気性抜群のシューズを履いたら足の蒸れから完全解放された話（スニーカー・革靴の実例あり）'
 description: '靴底に通気孔があるベンチレーションシューズのリアルレビュー。アディダスやビジネス革靴（アシックス・ホーキンス・GEOX等）の実例、雨天時の注意点やインソールの毛玉お手入れまで解説します。'
 pubDate: '2026-09-08'
-heroImage: '../../assets/blog-placeholder-about.jpg'
+heroImage: '../../assets/breathable-shoes-sole.jpg'
 categories: ['ファッション', 'レビュー', 'ビジネス']
 ---
 
