@@ -24,3 +24,6 @@ pnpm-debug.log*
 .idea/
 WP_Output/
 process_wp_posts.mjs
+
+# windows shortcuts
+*.lnk
