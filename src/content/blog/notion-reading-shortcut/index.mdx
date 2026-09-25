@@ -6,8 +6,13 @@ heroImage: './hero.png'
 categories: ['仕事術', '業務効率化', 'Notion']
 ---
 
+import { Image } from 'astro:assets';
 import ProblemBox from '../../../components/ProblemBox.astro';
 import ConclusionBox from '../../../components/ConclusionBox.astro';
+
+import popupFilteredImg from './shortcut-popup-filtered.jpg';
+import popupAllImg from './shortcut-popup-all.jpg';
+import dbTableImg from './notion-database-table.png';
 
 <ProblemBox>
 - Notionで読書管理を作ったものの、開くのがだるくてメモが続かない
@@ -53,13 +58,25 @@ Notionはデータベース設計の自由度が高い反面、<b>「目的の1�
 
 ## 配布ショートカットの動作イメージと仕組み
 
-まずは今回配布するショートカットの動きをご覧ください。
+実際の動作画面がこちらです。
 
-### 1タップで「読書中」の本がポップアップ
+### 1タップで「読書中」の本だけがポップアップ
 
 ホーム画面のアイコン（または背面タップ・アクションボタン）を押すと、画面上部にメニューが表示されます。
 
 表示されるのは、データベース内で<b>「まだ読了チェックがついていない本」だけ</b>です。
+
+<figure>
+  <Image src={popupFilteredImg} alt="読了チェックが入っていない本だけがポップアップ表示された画面" />
+  <figcaption>ショートカット起動時のポップアップ。読了済みの「書籍1」は自動で除外され、読書中の「書籍2」のみが候補に並ぶ</figcaption>
+</figure>
+
+並行して複数の本を読んでいる場合でも、未読了の本がリスト形式で一覧表示されます。
+
+<figure>
+  <Image src={popupAllImg} alt="複数の未読了書籍が選択肢として並ぶポップアップ画面" />
+  <figcaption>未読了本が複数ある場合の一覧。読みたい本を選ぶだけで該当ページへ直行できる</figcaption>
+</figure>
 
 リストから読みたい書籍名をタップした瞬間、Notionアプリが立ち上がり、該当書籍の個別ページが一撃で開きます。
 
@@ -114,6 +131,11 @@ Notionはデータベース設計の自由度が高い反面、<b>「目的の1�
 ### ① 必要なプロパティ設計
 
 読書管理データベースに、以下の2つのプロパティが存在することを確認してください。
+
+<figure>
+  <Image src={dbTableImg} alt="Notion読書メモデータベースのテーブルビュー。読了チェックボックスと書籍名タイトル列" />
+  <figcaption>Notion読書データベースのプロパティ構成。「読了（チェックボックス）」と「書籍名（タイトル）」を設定する</figcaption>
+</figure>
 
 - <b>`書籍名`</b>（プロパティの種類: <b>タイトル / Title</b>）
 - <b>`読了`</b>（プロパティの種類: <b>チェックボックス / Checkbox</b>）
