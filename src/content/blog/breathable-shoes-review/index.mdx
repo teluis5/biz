@@ -8,6 +8,7 @@ categories: ['ファッション', 'レビュー', 'ビジネス']
 
 import ProblemBox from '../../../components/ProblemBox.astro';
 import ConclusionBox from '../../../components/ConclusionBox.astro';
+import ProductLink from '../../../components/ProductLink.astro';
 
 <ProblemBox>
 - 毎日の通勤で靴の中が蒸れてしまい、夕方になると不快感がひどい…
@@ -63,14 +64,12 @@ import ConclusionBox from '../../../components/ConclusionBox.astro';
 #### ◆ アディダス Climacool（クライマクール）シリーズ
 靴裏（アウトソール）に複数のスリット・通気穴が空いており、インソール自体もメッシュや穴あき仕様。360度全方位から風が抜ける涼感ハイテクモデルの代表格です。オールブラックやホワイト単色のモデルを選べば、スラックスやセットアップなどのオフィスカジュアルにもすんなり馴染みます。
 
-<div style="margin: 1.5rem 0; padding: 1.2rem; border: 1px solid #cbd5e1; border-radius: 8px; background-color: #f8fafc; text-align: center;">
-  <p style="margin-bottom: 0.8rem; font-weight: bold; color: #1e293b;">▼ アディダス クライマクールをチェックする</p>
-  <div style="display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap;">
-    <a href="https://www.amazon.co.jp/s?k=adidas+climacool&tag=YOUR_AMAZON_TAG" target="_blank" rel="noopener noreferrer" style="background-color: #f59e0b; color: #fff; padding: 0.5rem 1.2rem; border-radius: 4px; text-decoration: none; font-weight: bold; font-size: 0.9rem;">Amazonで探す</a>
-    <a href="https://search.rakuten.co.jp/search/mall/adidas+climacool/?f=1" target="_blank" rel="noopener noreferrer" style="background-color: #bf0000; color: #fff; padding: 0.5rem 1.2rem; border-radius: 4px; text-decoration: none; font-weight: bold; font-size: 0.9rem;">楽天市場で探す</a>
-    <a href="https://shopping.yahoo.co.jp/search?p=adidas+climacool" target="_blank" rel="noopener noreferrer" style="background-color: #ff0033; color: #fff; padding: 0.5rem 1.2rem; border-radius: 4px; text-decoration: none; font-weight: bold; font-size: 0.9rem;">Yahoo!ショッピングで探す</a>
-  </div>
-</div>
+<ProductLink 
+  title="アディダス クライマクール（adidas Climacool）シリーズ"
+  rakutenKeyword="adidas climacool"
+  yahooUrl="https://shopping.yahoo.co.jp/search?p=adidas+climacool"
+  desc="靴底ベンチレーション＆360度全方位メッシュで真夏も蒸れない通気性スニーカー"
+/>
 
 ---
 
@@ -81,26 +80,22 @@ import ConclusionBox from '../../../components/ConclusionBox.astro';
 #### ◆ アシックス ランウォーク（ASICS RUNWALK / エアサイクル）
 ビジネスシューズ界の快適性最高峰。ソールに搭載された空気孔と歩行時の衝撃緩衝材（GEL）が連動し、歩くたびに熱気を靴底から排出します。本格的な天然皮革ドレスシューズそのものの風格で、フォーマルな場や重要な商談でも全く違和感がありません。
 
-<div style="margin: 1.5rem 0; padding: 1.2rem; border: 1px solid #cbd5e1; border-radius: 8px; background-color: #f8fafc; text-align: center;">
-  <p style="margin-bottom: 0.8rem; font-weight: bold; color: #1e293b;">▼ アシックス ランウォーク（エアサイクル）をチェックする</p>
-  <div style="display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap;">
-    <a href="https://www.amazon.co.jp/s?k=%E3%83%A9%E3%83%B3%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%AF+%E3%82%A8%E3%82%A2%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AB&tag=YOUR_AMAZON_TAG" target="_blank" rel="noopener noreferrer" style="background-color: #f59e0b; color: #fff; padding: 0.5rem 1.2rem; border-radius: 4px; text-decoration: none; font-weight: bold; font-size: 0.9rem;">Amazonで探す</a>
-    <a href="https://search.rakuten.co.jp/search/mall/%E3%83%A9%E3%83%B3%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%AF+%E3%82%A8%E3%82%A2%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AB/?f=1" target="_blank" rel="noopener noreferrer" style="background-color: #bf0000; color: #fff; padding: 0.5rem 1.2rem; border-radius: 4px; text-decoration: none; font-weight: bold; font-size: 0.9rem;">楽天市場で探す</a>
-    <a href="https://shopping.yahoo.co.jp/search?p=%E3%83%A9%E3%83%B3%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%AF+%E3%82%A8%E3%82%A2%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AB" target="_blank" rel="noopener noreferrer" style="background-color: #ff0033; color: #fff; padding: 0.5rem 1.2rem; border-radius: 4px; text-decoration: none; font-weight: bold; font-size: 0.9rem;">Yahoo!ショッピングで探す</a>
-  </div>
-</div>
+<ProductLink 
+  title="アシックス ランウォーク エアサイクル（ASICS RUNWALK）"
+  rakutenKeyword="ランウォーク エアサイクル"
+  yahooUrl="https://shopping.yahoo.co.jp/search?p=ランウォーク+エアサイクル"
+  desc="GELクッション×靴底排熱の最高峰ビジネスシューズ。長時間の外回りでも快適"
+/>
 
 #### ◆ ホーキンス プレミアム アイステック / エアライト（HAWKINS）
 ABC-MART等で気軽に購入できる定番シリーズ。靴底に通気孔（ベンチレーションシステム）を備え、コストパフォーマンスに優れています。1万円前後の手頃な価格帯が多く、毎日の通勤でガシガシ履き潰したいデイリーユースにぴったりです。
 
-<div style="margin: 1.5rem 0; padding: 1.2rem; border: 1px solid #cbd5e1; border-radius: 8px; background-color: #f8fafc; text-align: center;">
-  <p style="margin-bottom: 0.8rem; font-weight: bold; color: #1e293b;">▼ ホーキンス 通気性ビジネスシューズをチェックする</p>
-  <div style="display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap;">
-    <a href="https://www.amazon.co.jp/s?k=%E3%83%9B%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B9+%E3%82%A8%E3%82%A2%E3%83%A9%E3%82%A4%E3%83%88&tag=YOUR_AMAZON_TAG" target="_blank" rel="noopener noreferrer" style="background-color: #f59e0b; color: #fff; padding: 0.5rem 1.2rem; border-radius: 4px; text-decoration: none; font-weight: bold; font-size: 0.9rem;">Amazonで探す</a>
-    <a href="https://search.rakuten.co.jp/search/mall/%E3%83%9B%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B9+%E3%82%A8%E3%82%A2%E3%83%A9%E3%82%A4%E3%83%88/?f=1" target="_blank" rel="noopener noreferrer" style="background-color: #bf0000; color: #fff; padding: 0.5rem 1.2rem; border-radius: 4px; text-decoration: none; font-weight: bold; font-size: 0.9rem;">楽天市場で探す</a>
-    <a href="https://shopping.yahoo.co.jp/search?p=%E3%83%9B%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B9+%E3%82%A8%E3%82%A2%E3%83%A9%E3%82%A4%E3%83%88" target="_blank" rel="noopener noreferrer" style="background-color: #ff0033; color: #fff; padding: 0.5rem 1.2rem; border-radius: 4px; text-decoration: none; font-weight: bold; font-size: 0.9rem;">Yahoo!ショッピングで探す</a>
-  </div>
-</div>
+<ProductLink 
+  title="ホーキンス 通気性ビジネスシューズ（プレミアム アイステック/エアライト）"
+  rakutenKeyword="ホーキンス エアライト"
+  yahooUrl="https://shopping.yahoo.co.jp/search?p=ホーキンス+エアライト"
+  desc="手頃な価格帯でガシガシ履けるコスパ最強の靴底通気ビジネスシューズ"
+/>
 
 #### ◆ ハイドロテック（HYDRO-TECH）ブリーズクール / 風香
 高いクッション性と軽量設計に定評があるブランド。ソール裏に通気孔を配置し、靴内の空気を効率よく強制循環させます。足幅が広め（3E/4E）の方でもゆったり履ける設計が多く、歩行距離が長いビジネスパーソンに心強い味方です。
